@@ -5,7 +5,7 @@ addons:
   sonarcloud:
     organization: "org-uzh-ase"
     token:
-      secure: "Vht4/gxooVrAKIP2ylgEoqvjD+QI3HKmBCKL14kbwXwxIaIOBHGB3zOftA3oKIJD8VfZKRUmofq1dkN4Rs6XM9IehAB81OJOFfUX4tDQEwjBzRvrkPLr36aQTmnWNhbwu1cQfPlNQ/D97AuElPr1IgIf8+12U0KEnCGPDi9rVp25YuwEI/FtAN2nlrhLJLPbABBAZGs+z+7ClYiT48GHsLb/msEQysJVPyXtyN35Z+wy8tTkoU9T3xxlp3Fb4njV1+JWUfTp07WqsPUVa2h7Ztqs6G8vY4m5J4/6r58CUKizvM0PeGW4TkqaqE1TYjNKlp47+kGRbaIEl8YNeyO9ai70pT8jSL4Ha1TgxaAc5K9m4CYE7dhyaT0gywVa8RzqxsmEUeeR78sBQDgMrIIpDvsCz9SdK1lptJLz99lvbHag12Ga+KmN2Eggq/sWS1GfZ8VPPdpndD8zizZdiolYuOWNQhT1zuj+fUkrfPllkXpnjc7K1sFK1CUhz9m0eGPUgNJuGUcLr6D1zkguFtJH1HyM6HOeSy0/67COOuROyvFdAE4oVhtUxQ1mmlBnRop2zCWbYohodSWdEe1jDPKHUw1SJHn8PkzHzesACBbKCJQq9+pzAAVTKBnNrkuwQ5UCu1CfYmqYNdEkweMMLP7noBas9Ko2MEJE9Ik3iZVVdmo=" # encrypted value of your token
+      secure: $SONAR_TOKEN # encrypted value of your token
 before_script:
   - sleep 15
 script:

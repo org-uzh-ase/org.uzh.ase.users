@@ -6,8 +6,16 @@ public class User {
     @Id
     public String id;
 
-    public String name;
-    public String email;
+    private String name;
+    private String email;
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
 
     public User() {}
 

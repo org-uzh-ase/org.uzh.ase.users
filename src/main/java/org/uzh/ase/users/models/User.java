@@ -4,10 +4,14 @@ import org.springframework.data.annotation.Id;
 
 public class User {
     @Id
-    public String id;
+    private String id;
 
     private String name;
     private String email;
+
+    public String getId() {
+        return id;
+    }
 
     public String getName() {
         return name;

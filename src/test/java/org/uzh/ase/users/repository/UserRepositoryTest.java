@@ -27,5 +27,9 @@ public class UserRepositoryTest {
         User user = users.get(0);
         assertEquals("Alice", user.getName());
         assertEquals("alice@test.com", user.getEmail());
+        assertNotNull(user.getId());
+        assertEquals(String.format(
+                "User[id=%s, name='%s']",
+                user.getId(), "Alice"), user.toString());
     }
 }

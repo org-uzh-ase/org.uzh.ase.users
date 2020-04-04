@@ -9,14 +9,14 @@ public class Score {
     private String id;
 
     private String userId;
-    private Integer score;
+    private Integer scoreNo;
 
     public String getId() {
         return id;
     }
 
-    public Integer getScore() {
-        return score;
+    public Integer getScoreNo() {
+        return scoreNo;
     }
 
     public String getUserId() {
@@ -25,8 +25,8 @@ public class Score {
 
     public Score(){}
 
-    public Score (String userId, Integer score){
-        this.score = score;
+    public Score (String userId, Integer scoreNo){
+        this.scoreNo = scoreNo;
         this.userId = userId;
     }
 
@@ -34,6 +34,6 @@ public class Score {
     public String toString() {
         return String.format(
                 "Score[user=%s, score='%s']",
-                userId, score);
+                userId, scoreNo);
     }
 }

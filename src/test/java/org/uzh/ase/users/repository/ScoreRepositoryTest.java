@@ -4,12 +4,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.uzh.ase.users.models.Score;
-import org.uzh.ase.users.models.User;
-import org.uzh.ase.users.repository.UserRepository;
 
 import java.util.List;
 
@@ -28,6 +24,6 @@ public class ScoreRepositoryTest {
         assertEquals(1, scores.size());
         Score score = scores.get(0);
         assertEquals("userId", score.getUserId());
-        assertEquals(100, score.getScore());
+        assertEquals(100, score.getScoreNo());
     }
 }

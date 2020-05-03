@@ -6,5 +6,5 @@ import org.uzh.ase.users.models.Score;
 import java.util.List;
 
 public interface ScoreRepository extends MongoRepository<Score, String> {
-    List<Score> findByUserId(String userId);
+    List<Score> findAllOrderByScoreNo();
 }

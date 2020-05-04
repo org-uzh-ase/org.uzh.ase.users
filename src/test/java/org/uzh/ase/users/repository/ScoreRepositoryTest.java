@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
 import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.uzh.ase.users.models.Score;
+import org.uzh.ase.users.models.ScoreDB;
 
 import java.util.List;
 
@@ -20,15 +20,15 @@ public class ScoreRepositoryTest {
 
     @Test
     public void testRepository(){
-        repository.save(new Score("user1", 100));
-        repository.save(new Score("user2", 1000));
-        repository.save(new Score("user3", 500));
+        repository.save(new ScoreDB("user1", 100));
+        repository.save(new ScoreDB("user2", 1000));
+        repository.save(new ScoreDB("user3", 500));
 
-        List<Score> scores = repository.findAll(Sort.by(Sort.Direction.DESC, "scoreNo"));
+        List<ScoreDB> scores = repository.findAll(Sort.by(Sort.Direction.DESC, "scoreNo"));
         assertEquals(3, scores.size());
-        Score score1 = scores.get(0);
-        Score score2 = scores.get(1);
-        Score score3 = scores.get(2);
+        ScoreDB score1 = scores.get(0);
+        ScoreDB score2 = scores.get(1);
+        ScoreDB score3 = scores.get(2);
 
         assertTrue(score1.getScoreNo() > score2.getScoreNo());
         assertTrue(score2.getScoreNo() > score3.getScoreNo());

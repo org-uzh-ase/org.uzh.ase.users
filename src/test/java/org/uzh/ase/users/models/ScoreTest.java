@@ -10,5 +10,9 @@ public class ScoreTest {
         Score score = new Score("test-username", 120);
         assertEquals("test-username", score.getUser());
         assertEquals(120, score.getScoreNo());
+
+        ScoreDB scoreDB = new ScoreDB(score);
+        assertEquals("test-username", scoreDB.getUser());
+        assertEquals(120, scoreDB.getScoreNo());
     }
 }

@@ -20,9 +20,7 @@ public class ScoreController {
         if(result.size() > 100){
             return result.subList(0, 100);
         }
-
         return result;
-
     }
 
     @PostMapping(path = "/api/scores/score")

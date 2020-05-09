@@ -19,6 +19,11 @@ public class Score {
         this.user = user;
     }
 
+    public Score(ScoreDB scoreDB){
+        this.user = scoreDB.getUser();
+        this.scoreNo = scoreDB.getScoreNo();
+    }
+
     @Override
     public String toString() {
         return String.format(

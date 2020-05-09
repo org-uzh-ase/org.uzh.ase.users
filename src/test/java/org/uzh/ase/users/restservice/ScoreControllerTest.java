@@ -9,6 +9,7 @@ import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Sort;
+import org.uzh.ase.users.models.Score;
 import org.uzh.ase.users.models.ScoreDB;
 import org.uzh.ase.users.repository.ScoreRepository;
 
@@ -37,7 +38,7 @@ public class ScoreControllerTest {
         Mockito.when(repository.findAll(Sort.by(Sort.Direction.DESC, "scoreNo")))
                 .thenReturn(scoreDBList);
 
-        List<ScoreDB> list = scoreController.getScores();
+        List<Score> list = scoreController.getScores();
 
         assertTrue(list.size() == 3);
     }
@@ -53,7 +54,7 @@ public class ScoreControllerTest {
         Mockito.when(repository.findAll(Sort.by(Sort.Direction.DESC, "scoreNo")))
                 .thenReturn(scoreDBList);
 
-        List<ScoreDB> list = scoreController.getScores();
+        List<Score> list = scoreController.getScores();
 
         assertTrue(scoreDBList.size() > 100);
         assertTrue(list.size() == 100);

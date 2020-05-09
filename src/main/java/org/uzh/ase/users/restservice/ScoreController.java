@@ -7,6 +7,7 @@ import org.uzh.ase.users.models.Score;
 import org.uzh.ase.users.models.ScoreDB;
 import org.uzh.ase.users.repository.ScoreRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -15,10 +16,18 @@ public class ScoreController {
     ScoreRepository repository;
 
     @GetMapping(path = "/api/scores")
-    public List<ScoreDB> getScores(){
-        List<ScoreDB> result = repository.findAll(Sort.by(Sort.Direction.DESC, "scoreNo"));
-        if(result.size() > 100){
-            return result.subList(0, 100);
+    public List<Score> getScores(){
+        List<ScoreDB> resultDB = repository.findAll(Sort.by(Sort.Direction.DESC, "scoreNo"));
+        List<Score> result = new ArrayList<>();
+
+        if(resultDB.size() > 100){
+            for(ScoreDB scoreDB : resultDB.subList(0, 100)){
+                result.add(new Score(scoreDB));
+            };
+        }else{
+            for(ScoreDB scoreDB : resultDB){
+                result.add(new Score(scoreDB));
+            };
         }
         return result;
     }

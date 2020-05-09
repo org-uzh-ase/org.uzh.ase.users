@@ -30,11 +30,11 @@ public class ScoreController {
         if(resultDB.size() > 100){
             for(ScoreDB scoreDB : resultDB.subList(0, 100)){
                 result.add(new Score(scoreDB));
-            };
+            }
         }else{
             for(ScoreDB scoreDB : resultDB){
                 result.add(new Score(scoreDB));
-            };
+            }
         }
         return result;
     }

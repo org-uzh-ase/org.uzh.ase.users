@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Test for {@link org.uzh.ase.users.models.Score} and {@link org.uzh.ase.users.models.ScoreDB}
+ */
 public class ScoreTest {
     @Test
     public void testInit(){

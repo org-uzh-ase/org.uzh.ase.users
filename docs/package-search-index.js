@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"org.uzh.ase.users"},{"l":"org.uzh.ase.users.models"},{"l":"org.uzh.ase.users.repository"},{"l":"org.uzh.ase.users.restservice"}]

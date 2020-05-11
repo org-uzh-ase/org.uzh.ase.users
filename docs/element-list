@@ -1,0 +1,4 @@
+org.uzh.ase.users
+org.uzh.ase.users.models
+org.uzh.ase.users.repository
+org.uzh.ase.users.restservice

@@ -5,7 +5,7 @@ import org.uzh.ase.users.models.ScoreDB;
 
 /**
  * <p>Interface to recover Score Documents from the MongoDB.
- * @link org.uzh.ase.users.models.ScoreDB
+ * {@link org.uzh.ase.users.models.ScoreDB}
  * </p>
  */
 public interface ScoreRepository extends MongoRepository<ScoreDB, String> {

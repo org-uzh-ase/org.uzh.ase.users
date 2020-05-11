@@ -18,6 +18,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+
 /**
  * Test for {@link org.uzh.ase.users.restservice.ScoreController}
  */

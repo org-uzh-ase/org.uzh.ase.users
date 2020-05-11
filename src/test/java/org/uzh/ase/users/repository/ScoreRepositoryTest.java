@@ -44,4 +44,7 @@ public class ScoreRepositoryTest {
                 "Score[user=%s, score='%s']",
                 "user1", 100), score3.toString());
     }
+
+
+
 }

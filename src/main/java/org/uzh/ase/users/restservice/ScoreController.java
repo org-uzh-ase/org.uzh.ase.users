@@ -10,6 +10,13 @@ import org.uzh.ase.users.repository.ScoreRepository;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * REST API for the User Microservice
+ *
+ * <p>More detailed API Documentation available on
+ * <a href="https://app.swaggerhub.com/apis/ltoedt/ASE/0.1">SwaggerHub</a>
+ * </p>
+ */
 @RestController
 public class ScoreController {
     @Autowired

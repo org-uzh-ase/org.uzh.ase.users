@@ -3,6 +3,10 @@ package org.uzh.ase.users.models;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+/**
+ * Java Representation of the MongoDB document "score". Not to be confused with {@link org.uzh.ase.users.models.Score}
+ * which is the Data Transfer Object used in the REST API.
+ */
 @Document("score")
 public class ScoreDB {
     @Id

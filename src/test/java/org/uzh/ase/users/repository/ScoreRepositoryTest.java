@@ -12,6 +12,9 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Test for {@link org.uzh.ase.users.repository.ScoreRepository}
+ */
 @DataMongoTest
 @ExtendWith(SpringExtension.class)
 public class ScoreRepositoryTest {

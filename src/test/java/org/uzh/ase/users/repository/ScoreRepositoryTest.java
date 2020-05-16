@@ -13,7 +13,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Test for {@link org.uzh.ase.users.repository.ScoreRepository}
+ * Test for {@link org.uzh.ase.users.repository.ScoreRepository} using an embedded mongoDB in order to prevent side-effects
  */
 @DataMongoTest
 @ExtendWith(SpringExtension.class)
@@ -21,6 +21,10 @@ public class ScoreRepositoryTest {
     @Autowired
     ScoreRepository repository;
 
+    /**
+     * Verify that {@link org.uzh.ase.users.models.ScoreDB} can be saved and retrieved from the database.
+     * Verify that the used method in the {@link org.uzh.ase.users.restservice.ScoreController} returns a sorted list according to descending scores.
+     */
     @Test
     public void testRepository(){
         repository.save(new ScoreDB("user1", 100));

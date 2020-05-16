@@ -29,11 +29,20 @@ public class ScoreDB {
 
     public ScoreDB(){}
 
+    /**
+     * Score constructor
+     * @param user player name
+     * @param scoreNo score achieved by player
+     */
     public ScoreDB(String user, Integer scoreNo){
         this.scoreNo = scoreNo;
         this.user = user;
     }
 
+    /**
+     * Convenience constructor
+     * @param score Score object {@link org.uzh.ase.users.models.Score}
+     */
     public ScoreDB(Score score){
         this.scoreNo = score.getScoreNo();
         this.user = score.getUser();

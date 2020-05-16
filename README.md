@@ -1,5 +1,5 @@
-# Candidates microservice
-Microservice responsible for randomly generating a list of Movies that should be used in the Quiz microservice. For an API specification see [Swagger](https://app.swaggerhub.com/apis/ltoedt/ASE/0.1).
+# User microservice
+Microservice responsible for keeping track of player scores. For an API specification see [Swagger](https://app.swaggerhub.com/apis-docs/ltoedt/ASE/0.1).
 
 ## Getting started
 ### Prerequisites
@@ -9,15 +9,11 @@ Microservice responsible for randomly generating a list of Movies that should be
 
 
 ### Running
-We do not provide precompiled JARs, but you can use our pre-built container from [DockerHub](https://hub.docker.com/repository/docker/vladmasarik/candidates). If you are looking for JAR file, you need to build one yourself, see [building guide](##Building).
 After you are done with building simply execute the JAR, for example:
 ```
-java -jar target/candidates-0.0.1-SNAPSHOT.jar
+java -jar target/accessing-data-mongodb-0.0.1-SNAPSHOT.jar
 ```
-or in case of a container:
-```
-docker run <container tag>
-```
+
 
 
 ### Building
@@ -25,12 +21,6 @@ docker run <container tag>
 Using Maven, simply execute:
 ```
 mvn package
-```
-
-#### Container
-Build a JAR, then build a container using the 
-```
-docker build -t <container tag> -f candidates.Dockerfile .
 ```
 
 ### Testing

@@ -1,20 +1,23 @@
 package org.uzh.ase.users.restservice;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.uzh.ase.users.models.Score;
 import org.uzh.ase.users.models.ScoreDB;
 import org.uzh.ase.users.repository.ScoreRepository;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * REST API for the User Microservice
  *
  * <p>More detailed API Documentation available on
- * <a href="https://app.swaggerhub.com/apis/ltoedt/ASE/0.1">SwaggerHub</a>
+ * <a href="https://app.swaggerhub.com/apis-docs/ltoedt/ASE/0.1">SwaggerHub</a>
  * </p>
  */
 @RestController

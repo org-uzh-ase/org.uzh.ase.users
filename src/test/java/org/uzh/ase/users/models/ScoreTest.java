@@ -8,6 +8,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Test for {@link org.uzh.ase.users.models.Score} and {@link org.uzh.ase.users.models.ScoreDB}
  */
 public class ScoreTest {
+
+    /**
+     * Verify correct instantiation of {@link org.uzh.ase.users.models.Score} and {@link org.uzh.ase.users.models.ScoreDB}
+     */
     @Test
     public void testInit(){
         Score score = new Score("test-username", 120);

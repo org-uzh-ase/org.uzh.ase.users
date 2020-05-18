@@ -25,12 +25,21 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @SpringBootTest
 @RunWith(MockitoJUnitRunner.class)
 public class ScoreControllerTest {
+    /**
+     * The actual call to the database is mocked in order to prevent side-effects
+     */
     @Mock
     ScoreRepository repository;
 
+    /**
+     * The controller works as in production except for the database call which is mocked
+     */
     @InjectMocks
     private ScoreController scoreController = new ScoreController();
 
+    /**
+     * Verify that the ScoreController retrieves all the scores
+     */
     @Test
     public void testGetScores(){
         ScoreDB score1 = new ScoreDB("user1", 100);
@@ -47,6 +56,9 @@ public class ScoreControllerTest {
         assertTrue(list.size() == 3);
     }
 
+    /**
+     * Verify that if more than 100 scores are in the database that only 100 are returned
+     */
     @Test
     public void testNoMoreThan100(){
         List<ScoreDB> scoreDBList = new ArrayList<>();

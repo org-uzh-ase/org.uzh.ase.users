@@ -5,7 +5,7 @@ Microservice responsible for keeping track of player scores. For an API specific
 ### Prerequisites
 - Java 11
 - Maven
-- Running MongoDB, to define connection details see `application-local.properties` if you are running JAR, or `application-cloud.properties` if you are using containers. The files are in `src/main/resources`. The database should contain data, that you can import from `src/main/resources/movies`, see [How to import data](##How-to-import-data-into-MongoDB) for more info.
+- Running MongoDB, to define connection details see `application-local.properties` if you are running JAR, or `application-cloud.properties` if you are using containers.
 
 
 ### Running

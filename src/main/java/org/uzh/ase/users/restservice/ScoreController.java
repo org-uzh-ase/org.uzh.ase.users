@@ -3,17 +3,15 @@ package org.uzh.ase.users.restservice;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.coyote.Response;
+import org.owasp.encoder.Encode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.server.ResponseStatusException;
 import org.uzh.ase.users.models.Score;
 import org.uzh.ase.users.models.ScoreDB;
 import org.uzh.ase.users.repository.ScoreRepository;
@@ -50,6 +48,7 @@ public class ScoreController {
     @PostMapping(path = "/api/scores/score")
     public ResponseEntity<Score> postScore(@RequestBody Score score){
             repository.save(new ScoreDB(score));
-            return new ResponseEntity<Score>(score, HttpStatus.CREATED);
+            String encodeScore = Encode.forHtml(score.toString());
+            return new ResponseEntity(encodeScore, HttpStatus.CREATED);
     }
 }

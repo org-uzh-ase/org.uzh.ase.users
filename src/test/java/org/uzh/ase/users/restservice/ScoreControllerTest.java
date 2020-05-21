@@ -76,7 +76,7 @@ class ScoreControllerTest {
         List<Score> list = scoreController.getScores();
 
         assertTrue(scoreDBList.size() > 100);
-        assertTrue(list.size() == 100);
+        assertEquals(100, list.size());
     }
 
     /**

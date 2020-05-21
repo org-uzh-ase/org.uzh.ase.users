@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 @DataMongoTest
 @ExtendWith(SpringExtension.class)
-public class ScoreRepositoryTest {
+class ScoreRepositoryTest {
     @Autowired
     ScoreRepository repository;
 
@@ -26,7 +26,7 @@ public class ScoreRepositoryTest {
      * Verify that the used method in the {@link org.uzh.ase.users.restservice.ScoreController} returns a sorted list according to descending scores.
      */
     @Test
-    public void testRepository(){
+    void testRepository(){
         repository.save(new ScoreDB("user1", 100));
         repository.save(new ScoreDB("user2", 1000));
         repository.save(new ScoreDB("user3", 500));

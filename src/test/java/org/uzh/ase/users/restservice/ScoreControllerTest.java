@@ -7,8 +7,11 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
+import org.owasp.encoder.Encode;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.uzh.ase.users.models.Score;
 import org.uzh.ase.users.models.ScoreDB;
 import org.uzh.ase.users.repository.ScoreRepository;
@@ -74,5 +77,17 @@ public class ScoreControllerTest {
 
         assertTrue(scoreDBList.size() > 100);
         assertTrue(list.size() == 100);
+    }
+
+    /**
+     * Verify that correct status 203 is returned
+     */
+    @Test
+    public void testPostScore(){
+        Score score = new Score("test-user", 450);
+        Mockito.when(repository.save(new ScoreDB(score))).thenReturn(new ScoreDB(score));
+        ResponseEntity<Score> response = scoreController.postScore(score);
+
+        assertTrue(response.getStatusCode() == HttpStatus.CREATED);
     }
 }

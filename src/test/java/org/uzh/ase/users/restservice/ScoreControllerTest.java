@@ -19,6 +19,7 @@ import org.uzh.ase.users.repository.ScoreRepository;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
@@ -44,7 +45,7 @@ public class ScoreControllerTest {
      * Verify that the ScoreController retrieves all the scores
      */
     @Test
-    public void testGetScores(){
+    void testGetScores(){
         ScoreDB score1 = new ScoreDB("user1", 100);
         ScoreDB score2 = new ScoreDB("user2", 1000);
         ScoreDB score3 = new ScoreDB("user3", 500);
@@ -63,7 +64,7 @@ public class ScoreControllerTest {
      * Verify that if more than 100 scores are in the database that only 100 are returned
      */
     @Test
-    public void testNoMoreThan100(){
+    void testNoMoreThan100(){
         List<ScoreDB> scoreDBList = new ArrayList<>();
 
         for(int i = 0; i < 105; i++){
@@ -83,11 +84,11 @@ public class ScoreControllerTest {
      * Verify that correct status 203 is returned
      */
     @Test
-    public void testPostScore(){
+    void testPostScore(){
         Score score = new Score("test-user", 450);
         Mockito.when(repository.save(new ScoreDB(score))).thenReturn(new ScoreDB(score));
-        ResponseEntity<Score> response = scoreController.postScore(score);
+        ResponseEntity<String> response = scoreController.postScore(score);
 
-        assertTrue(response.getStatusCode() == HttpStatus.CREATED);
+        assertSame(response.getStatusCode(), HttpStatus.CREATED);
     }
 }

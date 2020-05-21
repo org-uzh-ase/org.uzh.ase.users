@@ -46,9 +46,9 @@ public class ScoreController {
     }
 
     @PostMapping(path = "/api/scores/score")
-    public ResponseEntity<Score> postScore(@RequestBody Score score){
+    public ResponseEntity<String> postScore(@RequestBody Score score){
             repository.save(new ScoreDB(score));
             String encodeScore = Encode.forHtmlContent(score.toString());
-            return new ResponseEntity(encodeScore, HttpStatus.CREATED);
+            return new ResponseEntity<>(encodeScore, HttpStatus.CREATED);
     }
 }

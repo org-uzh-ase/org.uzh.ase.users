@@ -89,6 +89,6 @@ public class ScoreControllerTest {
         Mockito.when(repository.save(new ScoreDB(score))).thenReturn(new ScoreDB(score));
         ResponseEntity<String> response = scoreController.postScore(score);
 
-        assertSame(response.getStatusCode(), HttpStatus.CREATED);
+        assertSame(HttpStatus.CREATED, response.getStatusCode());
     }
 }

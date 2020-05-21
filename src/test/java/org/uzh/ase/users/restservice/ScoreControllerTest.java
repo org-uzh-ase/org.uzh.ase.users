@@ -19,8 +19,7 @@ import org.uzh.ase.users.repository.ScoreRepository;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertSame;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 /**
@@ -28,7 +27,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  */
 @SpringBootTest
 @RunWith(MockitoJUnitRunner.class)
-public class ScoreControllerTest {
+class ScoreControllerTest {
     /**
      * The actual call to the database is mocked in order to prevent side-effects
      */
@@ -57,7 +56,7 @@ public class ScoreControllerTest {
 
         List<Score> list = scoreController.getScores();
 
-        assertTrue(list.size() == 3);
+        assertEquals(3, list.size());
     }
 
     /**

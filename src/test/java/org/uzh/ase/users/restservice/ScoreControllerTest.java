@@ -7,8 +7,11 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
+import org.owasp.encoder.Encode;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.uzh.ase.users.models.Score;
 import org.uzh.ase.users.models.ScoreDB;
 import org.uzh.ase.users.repository.ScoreRepository;
@@ -16,6 +19,7 @@ import org.uzh.ase.users.repository.ScoreRepository;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
@@ -41,7 +45,7 @@ public class ScoreControllerTest {
      * Verify that the ScoreController retrieves all the scores
      */
     @Test
-    public void testGetScores(){
+    void testGetScores(){
         ScoreDB score1 = new ScoreDB("user1", 100);
         ScoreDB score2 = new ScoreDB("user2", 1000);
         ScoreDB score3 = new ScoreDB("user3", 500);
@@ -60,7 +64,7 @@ public class ScoreControllerTest {
      * Verify that if more than 100 scores are in the database that only 100 are returned
      */
     @Test
-    public void testNoMoreThan100(){
+    void testNoMoreThan100(){
         List<ScoreDB> scoreDBList = new ArrayList<>();
 
         for(int i = 0; i < 105; i++){
@@ -74,5 +78,17 @@ public class ScoreControllerTest {
 
         assertTrue(scoreDBList.size() > 100);
         assertTrue(list.size() == 100);
+    }
+
+    /**
+     * Verify that correct status 203 is returned
+     */
+    @Test
+    void testPostScore(){
+        Score score = new Score("test-user", 450);
+        Mockito.when(repository.save(new ScoreDB(score))).thenReturn(new ScoreDB(score));
+        ResponseEntity<String> response = scoreController.postScore(score);
+
+        assertSame(HttpStatus.CREATED, response.getStatusCode());
     }
 }

@@ -9,7 +9,7 @@ Microservice responsible for keeping track of player scores. For an API specific
 
 
 ### Running
-We do not provide precompiled JARs, but you can use our pre-built container from [DockerHub](https://hub.docker.com/repository/docker/vladmasarik/user). If you are looking for JAR file, you need to build one yourself, see [building guide](##Building).
+We do not provide precompiled JARs, but you can use our pre-built container from [DockerHub](https://hub.docker.com/repository/docker/vladmasarik/user). If you are looking for JAR file, you need to build one yourself, see [building guide](#building).
 After you are done with building simply execute the JAR, for example:
 ```
 java -jar target/accessing-data-mongodb-0.0.1-SNAPSHOT.jar
